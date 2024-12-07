@@ -11,7 +11,7 @@ class TestPersonalAccount:
     def test_enter_profile_account(self, driver):
         main_page = MainPage(driver)
         personal_account_locators_page = PersonalAccount(driver)
-        time.sleep(3)
+        main_page.wait_button_enter_account()
         main_page.click_enter_account()
         personal_account_locators_page.order_data_form()
         personal_account_locators_page.click_button_enter_profil()
@@ -28,6 +28,7 @@ class TestPersonalAccount:
         personal_account_locators_page = PersonalAccount(driver)
         personal_account_locators_page.order_data_form()
         personal_account_locators_page.click_button_enter_profil()
+        main_page.wait_button_personal_account()
         time.sleep(2)
         main_page.click_button_personal_account()
         personal_account_locators_page.wait_visibility_of_description()

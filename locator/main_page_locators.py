@@ -17,8 +17,6 @@ class MainPageLocators:
     button_closet_window_details_ingredient = (By.XPATH, './/button[@class="Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK"]')
     # крестик в окне Заказ оформлен
     button_closet_window_order = (By.XPATH, './/button[@class="Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK"]')
-    # Картинка ингредиента в общем списке
-    # burger_ingredient = (By.XPATH, './/*[@alt="Флюоресцентная булка R2-D3"]')
     # перетаскиваю ингредиент для покупки
     place_for_ingredients = (By.XPATH, '//section[contains(@class, "BurgerConstructor_basket")]')
     # количество добавленных ингредиентов

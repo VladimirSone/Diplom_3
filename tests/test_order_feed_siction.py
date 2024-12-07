@@ -16,7 +16,6 @@ class TestOrderFeedSection:
         order_feed_page.click_order_card()
         assert order_feed_page.check_displaying_order_feed()
 
-    # тест падает неверный assert
     @allure.title('Проверить, что заказы пользователя из раздела «История заказов» отображаются на странице «Лента заказов»')
     @allure.title('Падает тест. Неверный assert - не смог сделать скролл до нужного элемента')
     def test_user_history_order_in_order_feed(self, driver):
@@ -30,15 +29,15 @@ class TestOrderFeedSection:
         time.sleep(3)
         main_page.click_button_closet_window_order()
         main_page.click_button_personal_account()
-        time.sleep(3)
-        personal_account_page.click_order_history_button()
-        time.sleep(3)
-        order_feed_page = OrderFeedPage(driver)
-        order_id = order_feed_page.get_id_order_card()
-        time.sleep(3)
-        main_page.click_order_feed()
         #time.sleep(3)
-        assert order_feed_page.check_id_order_in_feed(order_id)
+        personal_account_page.click_order_history_button()
+        #time.sleep(3)
+        order_feed_page = OrderFeedPage(driver)
+        order_id = order_feed_page.get_order_number()
+        #time.sleep(3)
+        main_page.click_order_feed()
+        order_feed_list = order_feed_page.get_order_number_list()
+        assert order_feed_list == order_id
 
 
     @allure.title('Проверить, что при создании нового заказа счётчик выполнено за всё время увеличивается')

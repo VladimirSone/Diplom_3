@@ -26,7 +26,6 @@ class TestMainFunctionality:
     @allure.title('Проверить,если кликнуть на ингредиент, появится всплывающее окно с деталями')
     def test_ingredient_window_details(self, driver):
         main_page = MainPage(driver)
-        #main_page.wait_button_ingredient()
         main_page.click_button_ingredient()
         main_page.wait_details_ingredient()
         assert main_page.check_displaying_details_ingredient()
@@ -49,7 +48,7 @@ class TestMainFunctionality:
     @allure.title('Проверить, что залогиненный пользователь может оформить заказ')
     def test_user_makes_order(self, driver):
         main_page = MainPage(driver)
-        time.sleep(2)
+        #time.sleep(2)
         main_page.click_enter_account()
         personal_account_page = PersonalAccount(driver)
         personal_account_page.order_data_form()
